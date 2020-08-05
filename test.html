@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#show").click(function(){
+    $(".newWindow").toggle();
+  });
+});
+</script>
+</head>
+<body>
+
+
+   <div class="details">
+				<label>EMail Address</label>
+				<input type="text" name="" id="nameid">
+				<br>
+				<label>password</label>
+				<input type="password" name="" id="nameid">
+			</div>
+
+         <button id="show">login</button>
+         <button onclick="myfunction()">signup</button>
+         <p id="demo"></p>
+
+<div class="newWindow">	
+	<label>Contact no.</label>
+	<input type="tel" name="phone" id="getValue">
+	<button onclick="getInput()">Next</button>
+</div>
+
+
+<script>
+
+
+function getInput() {
+    var userInput = document.getElementById('userInput').value;
+
+}
+</script>
+
+
+
+</body>
+</html>
