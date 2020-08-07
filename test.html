@@ -22,21 +22,38 @@ $(document).ready(function(){
 			</div>
 
          <button id="show">login</button>
-         <button onclick="myfunction()">signup</button>
+         <button onclick="myfunction()" id="fetch">signup</button>
          <p id="demo"></p>
 
 <div class="newWindow">	
 	<label>Contact no.</label>
 	<input type="tel" name="phone" id="getValue">
-	<button onclick="getInput()">Next</button>
+	<button id="Next" onclick="getInput()" >Next</button>
 </div>
 
 
 <script>
+function myfunction() {
+   fetch(' https://score-backend.herokuapp.com/scoar/')
+   .then((response) => {return response.text();
+     })
+    .then((data) => {console.log(data);
+    }) 
+   
+}
 
 
 function getInput() {
-    var userInput = document.getElementById('userInput').value;
+   
+  // fetch('https://score-backend.herokuapp.com/scoar/auth/login/sendotp/{contactno}')
+  // .then((response) => {return response.text();
+    // })
+   // .then((data) => {console.log(data);
+    //}) 
+
+var url = "https://score-backend.herokuapp.com/scoar/auth/login/sendotp/?" + $.param({foo:document.getElementById("getValue")})
+   fetch(url);
+
 
 }
 </script>
